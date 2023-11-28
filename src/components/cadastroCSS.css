@@ -1,0 +1,76 @@
+/* cadastroCSS.css */
+
+.Entrada {
+  text-align: center;
+  margin: 40px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulobar {
+  
+  text-align: center;
+}
+
+h2, .titulo {
+  font-size: 35px;
+}
+
+h4 {
+  margin: 5px;
+  padding-top: 20px;
+  min-width: 30%;
+  font-size: 25px;
+  color: #333;
+}
+
+ul {
+  font-size: 20px;
+  padding: 3px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.Nome,
+.Diciplina, .Curso {
+  min-width: 70%;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid gray;
+  border-radius: 7px;
+}
+
+input[type="checkbox"] {
+  size: 60px;
+  display: flex;
+  margin-left: 20;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: rgb(22, 156, 44);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1cbd07;
+}
+
+.TitDisciplina {
+padding-top: 10px;
+}
+
+.selecao {
+  font-size: 20px;
+  max-width: 70%;
+  min-width: 70%;
+  border-radius: 7px;
+  padding: 5px;
+}

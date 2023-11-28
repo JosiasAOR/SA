@@ -1,0 +1,27 @@
+/* ExiCadastro.css */
+
+.exi-cadastro {
+    border: 2px solid #333;
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .dados-salvos-titulo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .dados-salvos-lista {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dados-salvos-item {
+    margin-bottom: 8px;
+  }
+  
+  .dados-salvos-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
