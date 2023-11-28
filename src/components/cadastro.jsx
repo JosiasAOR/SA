@@ -79,7 +79,7 @@ const Cadastro = ({ onSalvar }) => {
       <div className="Entrada">
         <div className="titulovar"><h2 className="titulo">Gerenciamento de horários</h2></div>
         <ul>
-          <h4>Nome:</h4>
+          <h4 className="tituloH4">Nome:</h4>
           <input
             className="Nome"
             type="text"
@@ -90,7 +90,7 @@ const Cadastro = ({ onSalvar }) => {
           />
         </ul>
         <ul>
-          <h4>Curso:</h4>
+          <h4 className="tituloH4">Curso:</h4>
           <select
             className="Curso"
             value={curso}
@@ -104,14 +104,15 @@ const Cadastro = ({ onSalvar }) => {
             ))}
           </select>
         </ul>
+        <h4 className="tituloDiadaSemana">Dias da Semana:</h4>
         <ul style={{display:'flex'}}>
-          <h4>Dias da Semana:</h4>
           {["Segunda", "Terca", "Quarta", "Quinta", "Sexta"].map((dia) => (
             <li
               key={dia}
             >
               <h4>{dia}</h4>
               <input
+                className="checkbox"
                 type="checkbox"
                 checked={diasSemana.includes(dia)}
                 onChange={() => handleDiaSemanaChange(dia)}
@@ -119,8 +120,8 @@ const Cadastro = ({ onSalvar }) => {
             </li>
           ))}
         </ul>
+        <h4 className="tituloSemestre">Semestre:</h4>
         <ul style={{display:'flex'}}>
-          <h4>Semestre:</h4>
           {["Primeiro", "Segundo", "Terceiro", "Quarto"].map((semestre) => (
             <li
               key={semestre}
@@ -163,7 +164,7 @@ const Cadastro = ({ onSalvar }) => {
               ))}
             </select>
           </ul>)}
-        <button onClick={handleSalvar}>Salvar</button>
+        <button className="button" onClick={handleSalvar}>Salvar</button>
       </div>
     </div>
   );

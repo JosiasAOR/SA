@@ -33,25 +33,17 @@ const ExibicaoCadastro = ({ dadosSalvos }) => {
 
   return (
     <div className="exi-cadastro">
-      <h2 className="dados-salvos-titulo">Dados Salvos:</h2>
-      <ul className="dados-salvos-lista">
-        <li className="dados-salvos-item">
-          <strong className="dados-salvos-label">Nome:</strong> {nome}
-        </li>
-        <li className="dados-salvos-item">
-          <strong className="dados-salvos-label">Curso:</strong> {curso}
-        </li>
-        <li className="dados-salvos-item">
-          <strong className="dados-salvos-label">Dias da Semana:</strong> {diasSemana.join(", ")}
-        </li>
-        <li className="dados-salvos-item">
-          <strong className="dados-salvos-label">Disciplina:</strong> {disciplina}
-        </li>
-        <li className="dados-salvos-item">
-          <strong className="dados-salvos-label">Semestre:</strong> {semestreSelecionado}
-        </li>
-      </ul>
-    </div>
+  <h2 className="dados-salvos-titulo">Dados Salvos:</h2>
+  <ul className="dados-salvos-lista">
+    <li className="dados-salvos-item">
+      <p><strong className="dados-salvos-label">Nome:</strong> {nome}</p>
+      <p><strong className="dados-salvos-label">Curso:</strong> {curso}</p>
+      <p><strong className="dados-salvos-label">Dias da Semana:</strong> {diasSemana.join(", ")}</p>
+      <p><strong className="dados-salvos-label">Disciplina:</strong> {disciplina}</p>
+      <p><strong className="dados-salvos-label">Semestre:</strong> {semestreSelecionado}</p>
+    </li>
+  </ul>
+</div>
   );
 };
 
