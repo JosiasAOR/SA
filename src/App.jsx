@@ -9,6 +9,7 @@ export default function App() {
   function handleSalvar(dados) {
     setDadosSalvos(dados);
     console.log(dados)
+
   };
 
   return (

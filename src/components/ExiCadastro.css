@@ -1,44 +1,6 @@
 .exi-cadastro {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin: 20px;
-  margin-left: 5px;
-  padding: 0px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  min-height: fit-content;
-  max-width: 50%;
-}
-
-.dados-salvos-titulo {
-  font-size: 20px;
-  margin-bottom: 10px;
-  margin-bottom: 50px;
-}
-
-.dados-salvos-lista {
-  list-style: none;
-  padding: 0;
-}
-
-.dados-salvos-item {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-
-.dados-salvos-label {
-  font-weight: bold;
-  display: flex;
-  margin-right: 5px;
-}
-
-strong:hover {
-  color:#167dfc ;
-}
-
-p {
-  margin-top: 0%;
-  text-align:start;
 }

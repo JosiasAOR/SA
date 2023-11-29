@@ -28,6 +28,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: linear-gradient(to bottom, rgba(1, 182, 149, 1), white)
+}
+
+div {
+  background-color: transparent;
 }
 
 h1 {

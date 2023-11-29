@@ -1,0 +1,96 @@
+* {
+ align-items: center;
+ justify-content: center;
+}
+
+.semestres {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background: white;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ border-radius: 20px;
+ margin: 5px;
+ text-align:end;
+ height: 585px;
+ padding-left: 5px;
+ padding-right: 5px;
+}
+
+.semestresTit {
+ display: flex;
+ flex-direction: row;
+ padding-left: 0%;
+ margin: 0;
+}
+
+button{
+ outline: none;
+}
+
+.buttonSemestre {
+ outline: none;
+ padding: 30px;
+ font-size: 19px;
+ padding: 5px 10px 5px;
+ margin-top: 10px;
+ margin-Bottom: 9px;
+}
+
+.buttonSemestre:hover {
+ outline: none;
+ padding: 30px;
+ font-size: 19px;
+ padding: 5px 10px 5px;
+ margin: 0px;
+ background:#167dfc;
+ color: white;
+ margin-bottom: 10px;
+}
+
+.listaCad {
+ background-color: #f0f0f046;
+ overflow-y:auto;
+ height: 350px;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.088);
+}
+
+.listaCad::-webkit-scrollbar {
+ width: 10px;
+ background-color: transparent;
+}
+
+.listaCad::-webkit-scrollbar-thumb {
+ background-color: #42bf91;
+}
+
+.listaCad:hover {
+ background-color: #f0f0f046;
+ border-radius: 10px;
+ overflow-y: scroll;
+ height: 350px;
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.088);
+}
+
+.listaCadastro {
+ background-color: transparent;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-right: 20px;
+ margin-left: 20px;
+ border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+b {
+ background-color: transparent;
+ font-weight:bold;
+ color: black;
+}
+
+button:focus {
+ outline: none;
+}

@@ -182,7 +182,7 @@ const Cadastro = ({ onSalvar }) => {
               onChange={handleDisciplinaChange}
             >
               {disciplinasDisponiveis.map((disciplina) => (
-                <option key={disciplina} value={disciplina}>
+                <option select key={disciplina} value={disciplina}>
                   {disciplina}
                 </option>
               ))}

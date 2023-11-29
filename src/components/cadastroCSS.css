@@ -15,10 +15,11 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   min-height: fit-content;
   max-width: 100%;
+  background-color: white;
 }
 
 .titulo {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .tituloH4 {
@@ -40,8 +41,8 @@ input.Nome {
 }
 
 .Nome:hover{
-  box-shadow: 0px 0px 10px #167dfc84;
-  border: 1px solid #63947f;
+  box-shadow: 0px 0px 10px #c1ddff84;
+  border: 1px solid #4d9dff84;
 }
 
 .Curso {
@@ -52,21 +53,23 @@ input.Nome {
 }
 
 .Curso:hover{
-  box-shadow: 0px 0px 10px #167dfc84;
-  border: 1px solid #167dfc84;
+  box-shadow: 0px 0px 10px #c1ddff84;
+  border: 1px solid #4d9dff84;
 }
 
 .tituloDiadaSemana {
   padding: 0px;
   font-size: 19px;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   margin: 0px;
 }
 
 .tituloSemestre {
   padding: 0px;
   font-size: 19px;
-  padding-top: 10px;
+  padding-top: 33px;
+  padding-bottom: 10px;
   margin: 0px;
 }
 
@@ -115,9 +118,20 @@ h4.TitDisciplina{
   border-radius: 0;
   width: 290px;
   border: 1px solid #a0a0a0;
+  
+}
+
+.selecao:hover {
+  box-shadow: 0px 0px 10px #c1ddff84;
+  border: 1px solid #4d9dff84;
+}
+
+select:hover::after {
+  background-color: #167dfc;
 }
 
 ul{
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -125,14 +139,33 @@ ul{
   display:flex;
   align-items: center;
   text-align: center;
+  
 }
 
 li {
+  display: flex;
+  flex-direction: column;
   padding-top: 0px;
   list-style: none;
   margin-top: 0px;
   margin: 0 10px;
   padding: 0px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+li h4{
+  display: flex;
+  flex-direction: column;
+  padding-top: 0px;
+  list-style: none;
+  margin-top: 0px;
+  margin: 0 10px;
+  padding: 0px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
 }
 
 .button {
@@ -142,9 +175,11 @@ li {
   margin: 0px;
   background:#167dfc ;
   color: white;
+  margin-bottom: 15px;
 }
 
 .button:hover {
+  outline: none;
   padding: 30px;
   font-size: 19px;
   padding: 5px 10px 5px;
@@ -152,4 +187,9 @@ li {
   background:#167dfc ;
   color: white;
   box-shadow: 0px 0px 10px #167dfc;
+  margin-bottom: 15px;
+}
+
+button:focus {
+  outline: none;
 }
