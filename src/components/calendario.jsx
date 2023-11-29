@@ -53,6 +53,16 @@ export default function Calendario() {
               <p><b>Curso:</b> {professor.curso}</p>
               <p><b>Dias da Semana:</b> {professor.diassemana?.join(", ")}</p>
               <p><b>Disciplina:</b> {professor.disciplina}</p>
+              <button onClick={()=>{
+                 axios
+                 .delete(`https://apiprofessores.onrender.com/deletar/${professor.id}`)
+                 .then((response) => {
+                   console.log(response);
+                 })
+                 .catch((error) => {
+                   console.error("Erro ao buscar os dados:", error);
+                 });
+              }} style={{color: "red"}}>Deletar</button>
             </li>
           ))}
         </div>
