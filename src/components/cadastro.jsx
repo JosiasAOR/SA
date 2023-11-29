@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
-import './cadastroCSS.css';
+import axios from "axios";
+import "./cadastroCSS.css";
 
 const disciplinasPorSemestre = {
   Primeiro: ["Logica de Programacao", "Eletronica", "Tecnologia da Informacao"],
-  Segundo: ["Programação de Aplicativos", "Banco de Dados", "Introdução ao Desenvolvimento de Projetos", "Introdução a Indústria 4.0"],
-  Terceiro: ["Modelagem de Sistemas", "Manutenção de Sistemas", "Implantação de Sistema", "Internet das Coisas", "Sustentabilidade nos Processos Industriais", "Introdução a Qualidade e Produtividade"],
-  Quarto: ["Teste de Sistemas", "Desenvolvimento de Sistemas", "Saúde e Segurança no Trabalho"],
+  Segundo: [
+    "Programação de Aplicativos",
+    "Banco de Dados",
+    "Introdução ao Desenvolvimento de Projetos",
+    "Introdução a Indústria 4.0",
+  ],
+  Terceiro: [
+    "Modelagem de Sistemas",
+    "Manutenção de Sistemas",
+    "Implantação de Sistema",
+    "Internet das Coisas",
+    "Sustentabilidade nos Processos Industriais",
+    "Introdução a Qualidade e Produtividade",
+  ],
+  Quarto: [
+    "Teste de Sistemas",
+    "Desenvolvimento de Sistemas",
+    "Saúde e Segurança no Trabalho",
+  ],
 };
 
 const cursosTecnicos = [
@@ -17,22 +34,24 @@ const cursosTecnicos = [
 const Cadastro = ({ onSalvar }) => {
   const [dadosFormulario, setDadosFormulario] = useState({
     nome: "",
-    curso: "",  
+    curso: "",
     diasSemana: [],
     disciplina: "",
-    semestreSelecionado: "", 
+    semestreSelecionado: "",
   });
 
   const [disciplinasDisponiveis, setDisciplinasDisponiveis] = useState([]);
 
   useEffect(() => {
     if (dadosFormulario.semestreSelecionado) {
-      const disciplinas = disciplinasPorSemestre[dadosFormulario.semestreSelecionado];
+      const disciplinas =
+        disciplinasPorSemestre[dadosFormulario.semestreSelecionado];
       setDisciplinasDisponiveis(disciplinas);
     }
   }, [dadosFormulario.semestreSelecionado]);
 
-  const { nome, curso, diasSemana, disciplina, semestreSelecionado } = dadosFormulario;
+  const { nome, curso, diasSemana, disciplina, semestreSelecionado } =
+    dadosFormulario;
 
   const handleDiaSemanaChange = (dia) => {
     if (diasSemana.includes(dia)) {
@@ -71,13 +90,25 @@ const Cadastro = ({ onSalvar }) => {
   };
 
   const handleSalvar = () => {
-    onSalvar(dadosFormulario);
+    axios
+      .post(
+        "https://apiprofessores.onrender.com/adicionar-professor",
+        dadosFormulario
+      )
+      .then((response) => {
+        console.log("Dados enviados com sucesso:", response.data);
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar os dados:", error);
+      });
   };
 
   return (
     <div>
       <div className="Entrada">
-        <div className="titulovar"><h2 className="titulo">Gerenciamento de horários</h2></div>
+        <div className="titulovar">
+          <h2 className="titulo">Gerenciamento de horários</h2>
+        </div>
         <ul>
           <h4 className="tituloH4">Nome:</h4>
           <input
@@ -91,11 +122,7 @@ const Cadastro = ({ onSalvar }) => {
         </ul>
         <ul>
           <h4 className="tituloH4">Curso:</h4>
-          <select
-            className="Curso"
-            value={curso}
-            onChange={handleCursoChange}
-          >
+          <select className="Curso" value={curso} onChange={handleCursoChange}>
             <option value="">Selecione...</option>
             {cursosTecnicos.map((curso) => (
               <option key={curso} value={curso}>
@@ -105,11 +132,9 @@ const Cadastro = ({ onSalvar }) => {
           </select>
         </ul>
         <h4 className="tituloDiadaSemana">Dias da Semana:</h4>
-        <ul style={{display:'flex'}}>
+        <ul style={{ display: "flex" }}>
           {["Segunda", "Terca", "Quarta", "Quinta", "Sexta"].map((dia) => (
-            <li
-              key={dia}
-            >
+            <li key={dia}>
               <h4>{dia}</h4>
               <input
                 className="checkbox"
@@ -121,11 +146,9 @@ const Cadastro = ({ onSalvar }) => {
           ))}
         </ul>
         <h4 className="tituloSemestre">Semestre:</h4>
-        <ul style={{display:'flex'}}>
+        <ul style={{ display: "flex" }}>
           {["Primeiro", "Segundo", "Terceiro", "Quarto"].map((semestre) => (
-            <li
-              key={semestre}
-            >
+            <li key={semestre}>
               <h4>{semestre}</h4>
               <input
                 type="radio"
@@ -150,7 +173,8 @@ const Cadastro = ({ onSalvar }) => {
               ))}
             </select>
           </ul>
-        ):(<ul>
+        ) : (
+          <ul>
             <h4 className="TitDisciplina">Disciplina:</h4>
             <select
               className="selecao"
@@ -163,8 +187,11 @@ const Cadastro = ({ onSalvar }) => {
                 </option>
               ))}
             </select>
-          </ul>)}
-        <button className="button" onClick={handleSalvar}>Salvar</button>
+          </ul>
+        )}
+        <button className="button" onClick={handleSalvar}>
+          Salvar
+        </button>
       </div>
     </div>
   );
